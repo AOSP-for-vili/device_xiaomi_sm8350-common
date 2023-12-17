@@ -153,6 +153,28 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
+# Dolby Config File
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/dolby/config/dax-default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/dolby/dax-default.xml
+
+# Dolby Media Codecs Dependenices
+PRODUCT_PACKAGES += \
+    libcodec2_hidl@1.0.vendor \
+    libcodec2_soft_common.vendor \
+    libstagefright_softomx.vendor \
+    libstagefright_softomx_plugin.vendor
+
+# Dolby Media Codecs Loading Support (Overwrites Vendor files)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/dolby/media/media_codecs_dolby_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_audio.xml
+
+# Dolby Props
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.dolby.dax.version=DAX3_3.6.1.6_r1 \
+    ro.vendor.audio.dolby.dax.support=true \
+    ro.vendor.audio.dolby.surround.enable=true \
+    ro.vendor.audio.dolby.vision.support=true
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
