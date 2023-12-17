@@ -38,6 +38,11 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
 
 # Audio
 AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
+ifeq ($(TARGET_USES_DOLBY),true)
+AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := true
+else
+AUDIO_FEATURE_ENABLED_DS2_DOLBY_DAP := false
+endif
 AUDIO_FEATURE_ENABLED_GKI := true
 AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
@@ -67,6 +72,11 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
 DEVICE_MANIFEST_FILE := \
     $(COMMON_PATH)/hidl/manifest_lahaina.xml \
     $(COMMON_PATH)/hidl/manifest_xiaomi.xml
+
+ifeq ($(TARGET_USES_DOLBY),true)
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+     $(COMMON_PATH)/dolby/manifests/dolby_framework_matrix.xml
+endif
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
@@ -164,6 +174,9 @@ include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
+ifeq ($(TARGET_USES_DOLBY),true)
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/dolby
+endif
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 # Soong
