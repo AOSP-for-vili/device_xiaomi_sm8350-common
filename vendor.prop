@@ -162,6 +162,10 @@ persist.vendor.dpm.idletimer.mode=default
 persist.vendor.dpm.nsrm.bkg.evt=3955
 persist.vendor.dpmhalservice.enable=1
 
+# Fling
+ro.min.fling_velocity=160
+ro.max.fling_velocity=20000
+
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
