@@ -77,5 +77,3 @@ persist.vendor.vonr_setting_support=1
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
 
-# WFD
-persist.debug.wfd.enable=1
