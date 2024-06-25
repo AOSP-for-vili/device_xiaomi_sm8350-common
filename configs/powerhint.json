@@ -217,6 +217,8 @@
       "Path": "/sys/class/kgsl/kgsl-3d0/max_clock_mhz",
       "Values": [
         "840",
+        "778",
+        "676",
         "540",
         "443"
       ],
@@ -227,12 +229,15 @@
       "Name": "GPUMinFreq",
       "Path": "/sys/class/kgsl/kgsl-3d0/min_clock_mhz",
       "Values": [
+        "840",
+        "778",
+        "608",
         "540",
         "443",
         "379",
         "315"
       ],
-      "DefaultIndex": 3,
+      "DefaultIndex": 6,
       "ResetOnInit": true
     },
     {
@@ -567,7 +572,13 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUMinFreq",
       "Duration": 0,
-      "Value": "540"
+      "Value": "778"
+    },
+    {
+      "PowerHint": "EXPENSIVE_RENDERING",
+      "Node": "GPUMaxFreq",
+      "Duration": 0,
+      "Value": "840"
     },
     {
       "PowerHint": "LOW_POWER",
