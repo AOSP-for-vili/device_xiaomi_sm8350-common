@@ -90,6 +90,10 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i "/max_retry_alloc_output_timeout/ s/10000/0/" "${2}"
             ;;
+        vendor/lib/c2.dolby.client.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --add-needed "libcodec2_hidl_shim.so" "${2}"
+            ;;
         vendor/lib/libstagefright_soft_ac4dec.so | vendor/lib/libstagefright_soft_ddpdec.so | vendor/lib/libstagefrightdolby.so | vendor/lib64/libdlbdsservice.so | vendor/lib64/libstagefright_soft_ac4dec.so | vendor/lib64/libstagefright_soft_ddpdec.so | vendor/lib64/libstagefrightdolby.so)
             grep -q "libstagefright_foundation-v33.so" "${2}" || "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
             ;;
