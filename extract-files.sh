@@ -91,6 +91,7 @@ function blob_fixup() {
             sed -i "/max_retry_alloc_output_timeout/ s/10000/0/" "${2}"
             ;;
         vendor/lib/c2.dolby.client.so)
+            "${PATCHELF}" --add-needed "libcodec2_hidl_shim.so" "${2}"
             ;;
         vendor/etc/vintf/manifest/c2_manifest_vendor.xml)
             [ "$2" = "" ] && return 0
