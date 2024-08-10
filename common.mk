@@ -182,6 +182,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
 ifeq ($(TARGET_USES_DOLBY),true)
+# Dolby Interface
+PRODUCT_PACKAGES += \
+    XiaomiDolby
+
 # Dolby Props
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.dolby.dax.version=DAX3_3.6.1.6_r1 \
