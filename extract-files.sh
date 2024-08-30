@@ -81,16 +81,20 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
             ;;
+        vendor/bin/hw/dolbycodec2)
+            "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
+            ;;
         vendor/etc/media_lahaina/video_system_specs.json \
         |vendor/etc/media_shima_v1/video_system_specs.json \
         |vendor/etc/media_yupik_v1/video_system_specs.json)
             [ "$2" = "" ] && return 0
             sed -i "/max_retry_alloc_output_timeout/ s/10000/0/" "${2}"
             ;;
+        vendor/lib/c2.dolby.client.so)
+            ;;
         vendor/etc/vintf/manifest/c2_manifest_vendor.xml)
             [ "$2" = "" ] && return 0
             sed -ni '/ozoaudio/!p' "${2}"
-            sed -ni '/dolby/!p' "${2}"
             ;;
         vendor/lib64/android.hardware.secure_element@1.0-impl.so)
             [ "$2" = "" ] && return 0
