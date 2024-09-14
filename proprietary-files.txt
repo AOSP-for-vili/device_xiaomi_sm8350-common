@@ -135,7 +135,7 @@ vendor/bin/netmgrd|4254e808131fa3a13aec1474bb769dbd539379ff
 -vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/bin/diag-router
 vendor/etc/init/vendor.qti.diag.rc
-vendor/lib64/vendor.qti.diaghal@1.0.so
+vendor/lib64/vendor.qti.diaghal@1.0.so;MODULE_SUFFIX=-vendor
 
 # Display - from XQ-BC72 61.2.A.0.410
 vendor/etc/display/DPU660.xml|b26dd73e361546d89bf3d7082a471703dc6ac2cb
