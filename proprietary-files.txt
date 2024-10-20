@@ -182,7 +182,7 @@ vendor/etc/dolby_vision.cfg|1154eef94f2a9c73120c728d9513f1364d9fe018
 vendor/etc/init/dolbycodec2.rc|1ea8b363e94fd4f5410cadceb30de8229fb38045
 vendor/lib/c2.dolby.avc.dec.so|1af361913381ac98523b78cc879385f031d28ebc
 vendor/lib/c2.dolby.avc.sec.dec.so|d3e579a3a4d92a92d5d833c99eea3d504fd54cfc
-vendor/lib/c2.dolby.client.so|97f7cfeba57d4cbe02a8e86a9e1a4ab56e5e223c
+vendor/lib/c2.dolby.client.so;DISABLE_CHECKELF|97f7cfeba57d4cbe02a8e86a9e1a4ab56e5e223c
 vendor/lib/c2.dolby.egl.so|b6ba40013e45514cdaf94cab9a3a23c9a3b6f98f
 vendor/lib/c2.dolby.hevc.dec.so|da728b13f3e5a2890395df773ab2b0174209f1a6
 vendor/lib/c2.dolby.hevc.enc.so|7e2d292742a08e9d703d02ea1a6619b3c228eae7
@@ -192,7 +192,7 @@ vendor/lib/libdolbyottcameracontrol.so|b0e2b145c2714c523d5f765f0691b9dffed906f8
 vendor/lib/libdolbyvision.so|052effa6e1c2c34079fc28c463c1639ca63b9e40
 vendor/lib64/c2.dolby.avc.dec.so|439a00c49d07e4fa2451162f75ad1ec6dc5b1ede
 vendor/lib64/c2.dolby.avc.sec.dec.so|9dfdde23db39260bcba3a1d417dd07a5b521f411
-vendor/lib64/c2.dolby.client.so|88bf13140ff1cd767e86a221b579c17c662d9c48
+vendor/lib64/c2.dolby.client.so;DISABLE_CHECKELF|88bf13140ff1cd767e86a221b579c17c662d9c48
 vendor/lib64/c2.dolby.egl.so|8acc4f5f81efc2d4d590a6f7b8584cd993ffd74a
 vendor/lib64/c2.dolby.hevc.dec.so|1bbf42f25506585e782bd26590c47d952dafe2a0
 vendor/lib64/c2.dolby.hevc.enc.so|e148e4c26d9185b2ebb00be93ae849ec8116be0a
