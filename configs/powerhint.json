@@ -5,10 +5,11 @@
       "Path": "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
+        "1804800",
         "1708800",
         "1612800"
       ],
-      "DefaultIndex": 1,
+      "DefaultIndex": 2,
       "ResetOnInit": true
     },
     {
@@ -18,10 +19,11 @@
         "9999999",
         "1612800",
         "1401600",
+        "1305600",
         "1209600",
         "691200"
       ],
-      "DefaultIndex": 4,
+      "DefaultIndex": 5,
       "ResetOnInit": true
     },
     {
@@ -47,12 +49,14 @@
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
+        "2419200",
+        "2227200",
         "2112000",
         "1996800",
         "1766400",
         "1324800"
       ],
-      "DefaultIndex": 1,
+      "DefaultIndex": 3,
       "ResetOnInit": true
     },
     {
@@ -61,6 +65,7 @@
       "Values": [
         "9999999",
         "1766400",
+        "1324800",
         "1209600",
         "1075200",
         "710400"
@@ -90,12 +95,15 @@
       "Path": "/sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
+        "2592000",
         "2496000",
+        "2265600",
         "2150400",
+        "2035200",
         "1785600",
         "1555200"
       ],
-      "DefaultIndex": 2,
+      "DefaultIndex": 4,
       "ResetOnInit": true
     },
     {
@@ -141,6 +149,7 @@
       "Values": [
         "0",
         "25",
+        "35",
         "50"
       ],
       "DefaultIndex": 0,
@@ -156,22 +165,13 @@
       "ResetOnInit": true
     },
     {
-      "Name": "UclampFgMin",
+      "Name": "UclampFGMin",
       "Path": "/dev/cpuctl/foreground/cpu.uclamp.min",
       "Values": [
         "0",
         "50"
       ],
       "DefaultIndex": 0,
-      "ResetOnInit": true
-    },
-    {
-      "Name": "SchedPreferSpread",
-      "Path": "/proc/sys/kernel/sched_prefer_spread",
-      "Values": [
-        "4",
-        "0"
-      ],
       "ResetOnInit": true
     },
     {
@@ -368,13 +368,13 @@
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 0,
-      "Value": "1209600"
+      "Value": "1324800"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
-      "Value": "1612800"
+      "Value": "1305600"
     },
     {
       "PowerHint": "INTERACTION",
@@ -387,12 +387,6 @@
       "Node": "UclampTALatency",
       "Duration": 0,
       "Value": "1"
-    },
-    {
-      "PowerHint": "INTERACTION",
-      "Node": "SchedPreferSpread",
-      "Duration": 0,
-      "Value": "4"
     },
     {
       "PowerHint": "INTERACTION",
@@ -510,7 +504,13 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "UclampFgMin",
+      "Node": "UclampTAMin",
+      "Duration": 3000,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "UclampFGMin",
       "Duration": 3000,
       "Value": "50"
     },
